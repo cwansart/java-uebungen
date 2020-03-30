@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -63,5 +64,13 @@ public class MainTest {
         Mockito.verify(out).println("args[1] ist unültig");
         Mockito.verify(out).println("34 + 0 = 34");
         Mockito.verifyNoMoreInteractions(out);
+    }
+
+    @Test
+    public void testeAddiere() {
+
+        Assert.assertEquals(Main.addiere(3, 4), 7);
+        Assert.assertEquals(Main.addiere(99, 1), 100);
+        Assert.assertEquals(Main.addiere(50, 4), 54);
     }
 }
